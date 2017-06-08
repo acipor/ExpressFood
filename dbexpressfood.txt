@@ -1,0 +1,31 @@
+/*Création de la base de donnée avec configuration de l'encodage utilisé.*/
+CREATE DATABASE expressfood CHARACTER SET 'utf8';
+
+/*sélection de la bdd*/
+USE expressfood;
+
+/*Création des tables sous le moteur INNODB pour gérer les clefs étrangères*/
+
+/*table des utilisateurs/
+CREATE TABLE utilisateur
+(
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	nom VARCHAR(40) NOT NULL,
+	prenom VARCHAR(40) NOT NULL,
+	adresse_utilisateur INT UNSIGNED NOT NULL,
+	pseudo VARCHAR(40) NOT NULL,
+	email VARCHAR(40) NOT NULL,
+	motdepasse VARCHAR(40) NOT NULL,
+	categorie_id INT UNSIGNED NOT NULL,
+	PRIMARY KEY (id),
+	UNIQUE ind_email (email),
+	KEY adresse_utilisateur,
+	FOREIGN KEY(adresse_utilisateur) REFERENCES adresse(adresse_id),
+	KEY categorie_id,
+	FOREIGN KEY(categorie_id) REFERENCES categorie
+)
+ENGINE=INNODB;
+
+
+
+
