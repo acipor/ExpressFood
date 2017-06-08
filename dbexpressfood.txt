@@ -6,7 +6,25 @@ USE expressfood;
 
 /*Création des tables sous le moteur INNODB pour gérer les clefs étrangères*/
 
-/*table des utilisateurs/
+/* table categorie */
+
+/* table status_livreur*/
+
+/*table adresse */
+CREATE TABLE adresse
+(
+	adresse_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+	adresse1 VARCHAR(40) NOT NULL,
+	adresse2 VARCHAR(40) NOT NULL,
+	code_postal INT UNSIGNED NOT NULL,
+	ville VARCHAR(40) NOT NULL,
+	pays VARCHAR(40) NOT NULL,
+	telephone VARCHAR(40) NOT NULL,
+	PRIMARY KEY (adresse_id)
+)	
+ENGINE=INNODB;
+
+/*table utilisateur*/
 CREATE TABLE utilisateur
 (
 	id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -19,13 +37,44 @@ CREATE TABLE utilisateur
 	categorie_id INT UNSIGNED NOT NULL,
 	PRIMARY KEY (id),
 	UNIQUE ind_email (email),
-	KEY adresse_utilisateur,
-	FOREIGN KEY(adresse_utilisateur) REFERENCES adresse(adresse_id),
-	KEY categorie_id,
-	FOREIGN KEY(categorie_id) REFERENCES categorie
+	CONSTRAINT fk_adresse_adresse_id
+		FOREIGN KEY(adresse_utilisateur)
+		REFERENCES adresse(adresse_id)
+)	
+ENGINE=INNODB;
+
+/*table livreur*/
+CREATE TABLE livreur
+(
+    livreur_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    nom VARCHAR(40) NOT NULL,
+    prenom VARCHAR(40) NOT NULL,
+    statut CHAR(10) NOT NULL,
+    position_actuelle VARCHAR(100) NOT NULL,
+    PRIMARY KEY (livreur_id)
 )
 ENGINE=INNODB;
 
+/* table plat */
+CREATE TABLE plat
+(
+    plat_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    date_creation DATE NOT NULL,
+    nom VARCHAR(40) NOT NULL,
+    type_plat VARCHAR(40) NOT NULL,
+    prix DECIMAL(6,2) NOT NULL,
+    PRIMARY KEY (plat_id)
+)
+ENGINE=INNODB;
 
-
+/* table sac*/
+CREATE TABLE sac
+(
+    sac_livreur_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    plat INT UNSIGNED NOT NULL,
+    livreur INT UNSIGNED NOT NULL,
+    quantite INT NOT NULL,
+    PRIMARY KEY (sac_livreur_id)
+)
+ENGINE=INNODB;
 

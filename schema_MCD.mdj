@@ -2235,7 +2235,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+type",
+											"text": "+type_plat",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -9399,7 +9399,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFcd/gdI9Zrz1M="
 							},
-							"name": "type",
+							"name": "type_plat",
 							"visibility": "public",
 							"isStatic": false,
 							"isLeaf": false,
