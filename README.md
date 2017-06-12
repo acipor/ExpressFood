@@ -3,7 +3,7 @@ Concevez la solution technique d'une application de restauration en ligne, Expre
 
 Fichiers fournis:
 
--dbexpressfood.txt: implémentation de la BD (création de la BD, des tables en langages SQL)
+-dbexpressfood.sql: implémentation de la BD (création de la BD, des tables en langages SQL)
 
 -diagramme_de_contexte.jpg : schéma du diagramme de contexte
 
