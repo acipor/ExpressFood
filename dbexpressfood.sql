@@ -31,7 +31,7 @@ CREATE TABLE utilisateur
 	pseudo VARCHAR(40) NOT NULL,
 	email VARCHAR(40) NOT NULL,
 	motdepasse VARCHAR(40) NOT NULL,
-	categorie ENUM('client','livreur','administrateur','internaute') DEFAULT 'client',
+	categorie ENUM('client','livreur','administration','internaute') DEFAULT 'client',
 	PRIMARY KEY (id),
 	UNIQUE ind_pseudo (pseudo),
 	UNIQUE ind_email (email),
