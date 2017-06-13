@@ -7,6 +7,8 @@ Fichiers fournis:
 
 -diagramme_de_contexte.jpg : schéma du diagramme de contexte
 
+-diagramme_de_packages.jpg : schéma du diagramme de packages
+
 -readme.md 
 
 -schema_MCD.mdj : schéma créé par le logiciel StarUML
