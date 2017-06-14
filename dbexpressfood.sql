@@ -11,8 +11,7 @@ USE expressfood;
 CREATE TABLE adresse
 (
 	adresse_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-	adresse1 VARCHAR(40) NOT NULL,
-	adresse2 VARCHAR(40) NOT NULL,
+	adresse VARCHAR(40) NOT NULL,
 	code_postal INT UNSIGNED NOT NULL,
 	ville VARCHAR(40) NOT NULL,
 	pays VARCHAR(40) NOT NULL,
@@ -31,9 +30,8 @@ CREATE TABLE utilisateur
 	pseudo VARCHAR(40) NOT NULL,
 	email VARCHAR(40) NOT NULL,
 	motdepasse VARCHAR(40) NOT NULL,
-	categorie ENUM('client','livreur','administration','internaute') DEFAULT 'client',
+	categorie ENUM('client','livreur','administration') DEFAULT 'client',
 	PRIMARY KEY (id),
-	UNIQUE ind_pseudo (pseudo),
 	UNIQUE ind_email (email),
 	CONSTRAINT fk_adresse_adresse_id
 		FOREIGN KEY(adresse_utilisateur)
@@ -45,11 +43,14 @@ ENGINE=INNODB;
 CREATE TABLE livreur
 (
     livreur_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    nom VARCHAR(40) NOT NULL,
-    prenom VARCHAR(40) NOT NULL,
+    utilisat_id INT UNSIGNED NOT NULL,
     statut ENUM ('libre','en livraison','indisponible','en pause') DEFAULT 'libre',
-    position_actuelle VARCHAR(100) NOT NULL,
-    PRIMARY KEY (livreur_id)
+    position_latitude FLOAT NOT NULL,
+    position_longitude FLOAT NOT NULL,
+    PRIMARY KEY (livreur_id),
+    CONSTRAINT fk_liv_uti_id
+		FOREIGN KEY(utilisat_id)
+		REFERENCES utilisateur(id)
 )
 ENGINE=INNODB;
 
@@ -59,7 +60,7 @@ CREATE TABLE plat
     plat_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     date_de_creation DATE NOT NULL,
     nom_du_plat VARCHAR(40) NOT NULL,
-    type_plat ENUM('plat1','plat2','dessert1','dessert2') DEFAULT 'plat1',
+    type_plat ENUM('plat','dessert') DEFAULT 'plat',
     prix_plat DECIMAL(6,2) NOT NULL,
     PRIMARY KEY (plat_id)
 )
@@ -71,7 +72,7 @@ CREATE TABLE sac
     sac_livreur_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     plat INT UNSIGNED NOT NULL,
     livreur INT UNSIGNED NOT NULL,
-    quantite INT NOT NULL,
+    quantite INT UNSIGNED NOT NULL,
     PRIMARY KEY (sac_livreur_id),	
     CONSTRAINT fk_plat_plat_id
 		FOREIGN KEY(plat)
@@ -91,9 +92,9 @@ CREATE TABLE commande
 	livreur_id INT UNSIGNED NOT NULL,
 	date_commande DATETIME NOT NULL,
 	statut_paiement INT UNSIGNED NOT NULL,
-	heure_de_depart TIME,
-	heure_estime TIME,
-	heure_de_fin TIME,
+	heure_de_depart DATETIME,
+	heure_estime DATETIME,
+	heure_de_fin DATETIME,
 	prix_commande_ttc DECIMAL(6,2),
         adresse_de_livraison INT UNSIGNED NOT NULL,
         PRIMARY KEY (commande_id),
@@ -117,7 +118,7 @@ CREATE TABLE ligne_commande
     ligne_commande_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     commande_id INT UNSIGNED NOT NULL,
     plat_id INT UNSIGNED NOT NULL,
-    quantite INT NOT NULL,
+    quantite INT UNSIGNED NOT NULL,
     PRIMARY KEY (ligne_commande_id),
     CONSTRAINT fk_ligne_plat_id
 		FOREIGN KEY(plat_id)
