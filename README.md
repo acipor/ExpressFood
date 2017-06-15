@@ -9,11 +9,9 @@ Fichiers fournis:
 
 -diagramme_de_packages.jpg : schéma du diagramme de packages
 
--readme.md 
-
 -schema_MCD.mdj : schéma créé par le logiciel StarUML
 
--schema_MCD.pdf : schéma export en pdf
+-schema_MCD.pdf : schéma diagramem de class export en pdf
 
 -solution_technique.docx : note explicative sur le projet
 

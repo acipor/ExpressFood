@@ -129,3 +129,24 @@ CREATE TABLE ligne_commande
 )
 ENGINE=INNODB;
 
+
+/* jeu de données table adresse */
+INSERT INTO adresse VALUES
+(NULL,'5 rue Jean Jaurez', '68150', 'Ribeauvillé', 'France', '0688558425'),
+(NULL,'13 rue Montreux', '67380', 'Lingolsheim', 'France', '0789558425'),
+(NULL,'1 rue Principale', '67000', 'Strasbourg', 'France', '0618558425');
+
+
+/* jeu de données table utilisateur */
+INSERT INTO utilisateur VALUES
+(NULL,'Dupond', 'Marc', '1', 'dupondm', 'dupond.marc@orange.fr','DpMD25','client'),
+(NULL,'Reibel', 'Olivier', '2', 'reibelol', 'reibel@free.fr','reiBEL67','livreur'),
+(NULL,'Cipor', 'Alexandre', '3', 'alexc', 'aexandre.cipor@gmail.com','AlexCIPp67','administration');
+
+
+/* jeu de données table livreur */
+INSERT INTO livreur VALUES
+(NULL, '2', 'libre', '48.862725','2.287592000000018');
+
+
+
