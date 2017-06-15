@@ -132,7 +132,7 @@ ENGINE=INNODB;
 
 /* jeu de données table adresse */
 INSERT INTO adresse VALUES
-(NULL,'5 rue Jean Jaurez', '68150', 'Ribeauvillé', 'France', '0688558425'),
+(NULL,'5 rue Jean Jaurez', '67000', 'Strasbourg', 'France', '0688558425'),
 (NULL,'13 rue Montreux', '67380', 'Lingolsheim', 'France', '0789558425'),
 (NULL,'1 rue Principale', '67000', 'Strasbourg', 'France', '0618558425');
 
@@ -147,6 +147,19 @@ INSERT INTO utilisateur VALUES
 /* jeu de données table livreur */
 INSERT INTO livreur VALUES
 (NULL, '2', 'libre', '48.862725','2.287592000000018');
+
+/* jeu de données table plat */
+INSERT INTO plat VALUES
+(NULL,'2017-06-14', 'pizza burger','plat','9.00'),
+(NULL,'2017-06-14', 'pizza marguez','plat','9.50'),
+(NULL,'2017-06-15', 'pizza calzone','plat','9.44'),
+(NULL,'2017-06-15', 'pizza reine','plat','9.00'),
+(NULL,'2017-06-14', 'tiramisu','dessert','3.50'),
+(NULL,'2017-06-14', 'apple cumble','dessert','3.00'),
+(NULL,'2017-06-15', 'brownies','dessert','2.50'),
+(NULL,'2017-06-15', 'tarte aux fruits','dessert','3.50')
+;
+
 
 
 

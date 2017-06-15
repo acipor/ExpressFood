@@ -15,5 +15,11 @@ Fichiers fournis:
 
 -solution_technique.docx : note explicative sur le projet
 
+script sql:
+- creation un livreur.sql
+- creation un utilisateur client.sql
+- creation un utilisateur administration.sql
+
+
 
 
