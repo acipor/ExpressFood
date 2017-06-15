@@ -21,6 +21,7 @@ script sql:
 - creation un utilisateur administration.sql
 - creation un plat.sql
 - creation un sac.sql
+-liste des clients.sql
 
 
 

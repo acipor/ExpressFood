@@ -14,8 +14,8 @@ INSERT INTO utilisateur VALUES
 SET @utl =
 (SELECT id AS utl FROM utilisateur ORDER BY id DESC LIMIT 0,1);
 
-/*  on calcule sa position: par exmemple latitude :48.862725 , longitude:2.287592000000018
+/*  on calcule sa position: par exemple latitude :48.862725 , longitude:2.287592000000018
 
-/* ajout du livreur */
+/* ajout du livreur statut libre*/
 INSERT INTO livreur VALUES
 (NULL, @utl , 'libre', '48.862725','2.287592000000018');
