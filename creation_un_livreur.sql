@@ -10,12 +10,11 @@ SET @numero =
 INSERT INTO utilisateur VALUES
 (NULL,'Tourk', 'Amin', @numero, 'Tamin', 'amint@free.fr','TaGu554ss','livreur');
 
-/* récupération de  id utilisateur créé dans la variable utl */
+/* récupération de  id utilisateur créé dans la variable utl  de la table utilisateur*/
 SET @utl =
 (SELECT id AS utl FROM utilisateur ORDER BY id DESC LIMIT 0,1);
 
-/* on calcule la latitude et longitude à partir de son adresse: 2 place des halles,67000 Strasbourg*/
-/*  pour cette adresse c'est latitude :48.862725 , longitude:2.287592000000018
+/*  on calcule sa position: par exmemple latitude :48.862725 , longitude:2.287592000000018
 
 /* ajout du livreur */
 INSERT INTO livreur VALUES
