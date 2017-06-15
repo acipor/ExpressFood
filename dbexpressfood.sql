@@ -160,6 +160,20 @@ INSERT INTO plat VALUES
 (NULL,'2017-06-15', 'tarte aux fruits','dessert','3.50')
 ;
 
-
+/* jeu de donnes table sac */
+/* plat 1,livreur 1 , quantite 1 */
+/* plat 2,livreur 1, quantite 1 */
+/* plat 3,livreur 1 , quantite 1 */
+/* plat 4,livreur 1, quantite 1 */
+/* plat 6, livreur 1, quantite 2 */
+/* plat 7, livreur 1, quantite 2 */
+INSERT INTO sac VALUES
+(NULL,'1', '1','1'),
+(NULL,'2', '1','1'),
+(NULL,'3', '1','1'),
+(NULL,'4', '1','1'),
+(NULL,'6', '1','2'),
+(NULL,'7', '1','2')
+;
 
 

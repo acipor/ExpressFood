@@ -19,6 +19,8 @@ script sql:
 - creation un livreur.sql
 - creation un utilisateur client.sql
 - creation un utilisateur administration.sql
+- creation un plat.sql
+- creation un sac.sql
 
 
 
