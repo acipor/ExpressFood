@@ -177,3 +177,23 @@ INSERT INTO sac VALUES
 ;
 
 
+/* jeu de donnes table commande */
+/* utilisateur 1*/
+/* livreur 1 libre */
+/* comande payé 1 */
+/* adresse livraison 1*/
+INSERT INTO commande  VALUES 
+(NULL, '1', '1', '2017-06-16 10:36:00', '1', '2017-06-16 10:40:00', '2017-06-16 11:00:00', '2017-06-16 10:55:00', '25.50', '1');
+
+/* jeu de donnes table ligne_commande */
+/* commande no 1 */
+/* plat no1 x 2 */
+/* plat no6 x 1 */
+INSERT INTO ligne_commande VALUES
+(NULL,'1', '1','2'),
+(NULL,'1', '6','1')
+;
+
+
+
+
