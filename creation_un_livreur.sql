@@ -1,4 +1,4 @@
-/* creation d'une adresse  dans table utilisateur*/
+/* creation d'une adresse  dans table adresse*/
 INSERT INTO adresse VALUES
 (NULL,'2 Place des Halles', '67000', 'Strasbourg', 'France', '0625312245');
 
@@ -16,6 +16,6 @@ SET @utl =
 
 /*  on calcule sa position: par exemple latitude :48.862725 , longitude:2.287592000000018
 
-/* ajout du livreur statut libre*/
+/* ajout du livreur statut libre dans table livreur*/
 INSERT INTO livreur VALUES
 (NULL, @utl , 'libre', '48.862725','2.287592000000018');

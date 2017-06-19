@@ -1,4 +1,4 @@
-/* creation d'une adresse */
+/* creation d'une adresse dans table adresse */
 INSERT INTO adresse VALUES
 (NULL,'5 place de la République', '67000', 'Strasbourg', 'France', '0388202244');
 
@@ -6,6 +6,6 @@ INSERT INTO adresse VALUES
 SET @numero =
 (SELECT adresse_id AS numero FROM adresse ORDER BY adresse_id DESC LIMIT 0,1);
 
-/* ajout du client avec la cle externe=@numero et categorie=client */
+/* ajout du client avec la cle externe=@numero et categorie=client dans table utilisateur*/
 INSERT INTO utilisateur VALUES
 (NULL,'Chatin', 'Alain', @numero, 'chatinal', 'chatin@orange.fr','Chat2215ss','client');
