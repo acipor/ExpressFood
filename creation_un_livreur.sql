@@ -7,8 +7,10 @@ SET @numero =
 (SELECT adresse_id AS numero FROM adresse ORDER BY adresse_id DESC LIMIT 0,1);
 
 /* ajout du client avec la cle externe=@numero et categorie=livreur dans table utilisateur */
+/* crypter le mot de passe  avec MD5+SALT */
+/* salt = "@|-°+==00001ddQ" */ 
 INSERT INTO utilisateur VALUES
-(NULL,'Tourk', 'Amin', @numero, 'Tamin', 'amint@free.fr','TaGu554ss','livreur');
+(NULL,'Tourk', 'Amin', @numero, 'Tamin', 'amint@free.fr',MD5(CONCAT('@|-°+==00001ddQ','TaGu554ss')),'livreur');
 
 /* récupération de  id utilisateur créé dans la variable utl  de la table utilisateur*/
 SET @utl =

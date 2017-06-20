@@ -29,7 +29,7 @@ CREATE TABLE utilisateur
 	adresse_utilisateur INT UNSIGNED NOT NULL,
 	pseudo VARCHAR(40) NOT NULL,
 	email VARCHAR(40) NOT NULL,
-	motdepasse VARCHAR(40) NOT NULL,
+	motdepasse VARCHAR(100) NOT NULL,
 	categorie ENUM('client','livreur','administration') DEFAULT 'client',
 	PRIMARY KEY (id),
 	UNIQUE ind_email (email),
@@ -138,10 +138,12 @@ INSERT INTO adresse VALUES
 
 
 /* jeu de données table utilisateur */
+/* crypter le mot de passe  avec MD5+SALT */
+/* salt = "@|-°+==00001ddQ" */ 
 INSERT INTO utilisateur VALUES
-(NULL,'Dupond', 'Marc', '1', 'dupondm', 'dupond.marc@orange.fr','DpMD25','client'),
-(NULL,'Reibel', 'Olivier', '2', 'reibelol', 'reibel@free.fr','reiBEL67','livreur'),
-(NULL,'Cipor', 'Alexandre', '3', 'alexc', 'aexandre.cipor@gmail.com','AlexCIPp67','administration');
+(NULL,'Dupond', 'Marc', '1', 'dupondm', 'dupond.marc@orange.fr',MD5(CONCAT('@|-°+==00001ddQ','DpMD25')),'client'),
+(NULL,'Reibel', 'Olivier', '2', 'reibelol', 'reibel@free.fr',MD5(CONCAT('@|-°+==00001ddQ','reiBEL67')),'livreur'),
+(NULL,'Cipor', 'Alexandre', '3', 'alexc', 'aexandre.cipor@gmail.com',MD5(CONCAT('@|-°+==00001ddQ','AlexCIPp67')),'administration');
 
 
 /* jeu de données table livreur */
@@ -157,8 +159,7 @@ INSERT INTO plat VALUES
 (NULL,'2017-06-14', 'tiramisu','dessert','3.50'),
 (NULL,'2017-06-14', 'apple cumble','dessert','3.00'),
 (NULL,'2017-06-15', 'brownies','dessert','2.50'),
-(NULL,'2017-06-15', 'tarte aux fruits','dessert','3.50')
-;
+(NULL,'2017-06-15', 'tarte aux fruits','dessert','3.50');
 
 /* jeu de donnes table sac */
 /* plat 1,livreur 1 , quantite 1 */
@@ -173,8 +174,7 @@ INSERT INTO sac VALUES
 (NULL,'3', '1','1'),
 (NULL,'4', '1','1'),
 (NULL,'6', '1','2'),
-(NULL,'7', '1','2')
-;
+(NULL,'7', '1','2');
 
 
 /* jeu de donnes table commande */
@@ -191,8 +191,7 @@ INSERT INTO commande  VALUES
 /* plat no6 x 1 */
 INSERT INTO ligne_commande VALUES
 (NULL,'1', '1','2'),
-(NULL,'1', '6','1')
-;
+(NULL,'1', '6','1');
 
 
 
