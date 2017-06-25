@@ -6,8 +6,8 @@ INSERT INTO adresse VALUES
 SET @numero =
 (SELECT adresse_id AS numero FROM adresse ORDER BY adresse_id DESC LIMIT 0,1);
 
-/* ajout du client avec la cle externe=@numero et categorie=client dans table utilisateur*/
+/* ajout du client avec la cle externe=@numero et categorie=1 (client) dans table utilisateur*/
 /* crypter le mot de passe  avec MD5+SALT */
 /* salt = "@|-°+==00001ddQ" */ 
 INSERT INTO utilisateur VALUES
-(NULL,'Chatin', 'Alain', @numero, 'chatinal', 'chatin@orange.fr',MD5(CONCAT('@|-°+==00001ddQ','Chat2215ss')),'client');
+(NULL,'Chatin', 'Alain','1' , 'chatinal', 'chatin@orange.fr',MD5(CONCAT('@|-°+==00001ddQ','Chat2215ss')),@numero);

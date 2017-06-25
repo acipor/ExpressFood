@@ -1,8 +1,8 @@
 /*Création de la base de donnée avec configuration de l'encodage utilisé.*/
-CREATE DATABASE pizza CHARACTER SET 'utf8';
+CREATE DATABASE expressfood CHARACTER SET 'utf8';
 
 /*sélection de la bdd*/
-USE pizza;
+USE expressfood;
 
 CREATE TABLE type_plat (
                 type_plat_id INT AUTO_INCREMENT NOT NULL,
@@ -93,13 +93,15 @@ CREATE TABLE sac (
 )
 ENGINE=INNODB;
 
-
+/*statut_paiement correspond à 0 = en cours de paiement (ou dans le panier) 1 = payé*/
+/* statut_livraision correspond à 0 = en attente d'un livreur 1 = en cours de livraison 2 = livré*/
 CREATE TABLE commande (
                 commande_id INT AUTO_INCREMENT NOT NULL,
                 utilisateur_id INT NOT NULL,
                 livreur_id INT NOT NULL,
                 date_commande DATETIME NOT NULL,
                 status_paiement BOOLEAN NOT NULL,
+                status_livraison INTEGER NOT NULL, 
                 heure_de_depart DATETIME NOT NULL,
                 heure_de_fin DATETIME NOT NULL,
                 heure_estime DATETIME NOT NULL,

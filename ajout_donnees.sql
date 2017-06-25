@@ -84,8 +84,8 @@ INSERT INTO `sac` (`sac_livreur_id`, `livreur`, `quantite`, `plat_id`) VALUES (N
 
 /* jeu de donnes table commande */
 INSERT INTO `commande`
- (`commande_id`, `utilisateur_id`, `livreur_id`, `date_commande`, `status_paiement`, `heure_de_depart`, `heure_de_fin`, `heure_estime`, `prix_commande_ttc`, `adresse_de_livraison`) 
-VALUES (NULL, '1', '1', '2017-06-16 10:36:00', '1', '2017-06-16 10:40:00', '2017-06-16 11:00:00', '2017-06-16 10:55:00', '25.50', '1');
+ (`commande_id`, `utilisateur_id`, `livreur_id`, `date_commande`, `status_paiement`, `status_livraison`, `heure_de_depart`, `heure_de_fin`, `heure_estime`, `prix_commande_ttc`, `adresse_de_livraison`) 
+VALUES (NULL, '1', '1', '2017-06-16 10:36:00', '0', '0', '2017-06-16 10:40:00', '2017-06-16 11:00:00', '2017-06-16 10:55:00', '25.50', '1');
 
 /* jeu de donnes table ligne_commande */
 INSERT INTO `ligne_commande` (`ligne_commande_id`, `commande_id`, `plat_id`, `quantite`) 

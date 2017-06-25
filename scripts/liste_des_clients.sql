@@ -1,3 +1,3 @@
-/* liste des clients avec leur adresses*/
-/* avec recherche de donnes sur table adresse aussi */
-SELECT * FROM utilisateur,adresse WHERE (categorie = 'client') AND ( utilisateur.adresse_utilisateur = adresse.adresse_id);
+/* liste des clients categorie=1 avec leur adresses*/
+
+SELECT * FROM utilisateur,adresse WHERE (categorie = '1') AND ( utilisateur.adresse_utilisateur = adresse.adresse_id);
