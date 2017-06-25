@@ -1,8 +1,9 @@
 # Projet 4:ExpressFood
 Concevez la solution technique d'une application de restauration en ligne, Express Food
 
+---------------------------
 Fichiers fournis:
-
+---------------------------
 -creation_db_pizza.sql: implémentation de la BD (création de la BD, des tables, cles, index en langages SQL)
 
 -ajout_donnees.sql: jeux de données BD 
