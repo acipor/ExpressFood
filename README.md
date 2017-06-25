@@ -3,19 +3,21 @@ Concevez la solution technique d'une application de restauration en ligne, Expre
 
 Fichiers fournis:
 
--dbexpressfood.sql: implémentation de la BD (création de la BD, des tables en langages SQL)
+-creation_db_pizza.sql: implémentation de la BD (création de la BD, des tables, cles, index en langages SQL)
+
+-ajout_donnees.sql: jeux de données BD 
 
 -diagramme_de_contexte.jpg : schéma du diagramme de contexte
 
 -diagramme_de_packages.jpg : schéma du diagramme de packages
 
--schema_MCD.mdj : schéma créé par le logiciel StarUML
+-pizza.architect : schéma créé par le logiciel SQL Power Architect
 
--schema_MCD.pdf : schéma diagramem de class export en pdf
+-pizza_schema.png : schéma diagramme de class export en png
 
 -solution_technique.docx : note explicative sur le projet
 
-- des scripts sql
+-repertoire scripts:  scripts SQL
 
 
 
